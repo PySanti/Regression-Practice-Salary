@@ -20,4 +20,38 @@ La idea sera encontrar la mejor combinacion de hiperparametros posibles para cad
 
 ## Preprocesamiento
 
+1- Manejo de valores Nan: las columnas que contienen valores Nan son las siguientes.
+
+columna             porcentaje de valores nan
+______________________________
+Age                 0.029832935560859187%
+Gender              0.029832935560859187%
+Education Level     0.04474940334128878%
+Job Title           0.029832935560859187%
+Years of Experience 0.04474940334128878%
+Salary              0.07458233890214797%
+
+
+
+2- Codificacion: las columnas categoricas son las siguientes.
+
+columna             categorias
+______________________________
+Gender              3
+Education Level     7
+Job Title           193
+
+Se puede considerar utilizar One-Hot-Encoding para las columnas con menos categoricas y Target-Encoding para las demas.
+
+3- Scalers.
+
+4- Estudio de correlaciones.
+
+5- Estudio de distribuciones gaussianas: es imposible en un problema de regresion.
+
+6- Extraccion y/o seleccion de caracteristicas.
+
+7- Desequilibrio de datos.
+
+
 ## Entrenamiento
