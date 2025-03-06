@@ -1,4 +1,3 @@
-
 # Salary
 
 El objetivo del proyecto sera crear un meta-modelo de stacking (en el contexto de ensemble learning) utilizando algoritmos de regresion, especificamente:
@@ -24,12 +23,12 @@ La idea sera encontrar la mejor combinacion de hiperparametros posibles para cad
 
 columna             porcentaje de valores nan
 ______________________________
-Age                 0.029832935560859187%
-Gender              0.029832935560859187%
-Education Level     0.04474940334128878%
-Job Title           0.029832935560859187%
-Years of Experience 0.04474940334128878%
-Salary              0.07458233890214797%
+Age                 0.029%\
+Gender              0.029%\
+Education Level     0.044%\
+Job Title           0.029%\
+Years of Experience 0.044%\
+Salary              0.074%
 
 
 
@@ -37,8 +36,8 @@ Salary              0.07458233890214797%
 
 columna             categorias
 ______________________________
-Gender              3
-Education Level     7
+Gender              3\
+Education Level     7\
 Job Title           193
 
 Se puede considerar utilizar One-Hot-Encoding para las columnas con menos categoricas y Target-Encoding para las demas.
@@ -55,3 +54,13 @@ Se puede considerar utilizar One-Hot-Encoding para las columnas con menos catego
 
 
 ## Entrenamiento
+
+Finalmente se opto por no usar `SVR` dada la exigencia computacional que exige.
+
+
+| Variante de preprocesamiento | Regresion Lineal                                                                                                                             | SVR | Random Forest |
+|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|-----|---------------|
+| Scaler +; PCA +              | Mejores hiperparametros<br>{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'positive': False}<br>Mejor MAE<br>17353.6                |     |               |
+| Scaler +; PCA -              | Mejores hiperparametros<br>{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'positive': False}<br>Mejor MAE<br>17342.6                |     |               |
+| Scaler -; PCA +              | Mejores hiperparametros<br>{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'positive': True}<br>Mejor MAE<br>40613.2                 |     |               |
+| Scaler -; PCA -              | Mejores hiperparametros<br>{'copy_X': True, 'fit_intercept': True, 'n_jobs': None, 'positive': False}<br>Mejor precision<br>17342.6860153148 |     |               |
